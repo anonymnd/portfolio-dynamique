@@ -1,0 +1,5 @@
+<section class="portfolio-hero forma-hero" id="home"><div class="hero-copy"><p class="section-kicker">{{ $profile?->city ?: 'A PERSONAL PORTFOLIO' }}</p><h1>{{ $name }}<span class="hero-period">.</span></h1><p class="hero-role">{{ $role }}</p>@if($profile)<p class="hero-description">{{ \Illuminate\Support\Str::limit($profile->description, 190) }}</p>@endif<a class="portfolio-button" href="{{ $sections['projects']->isNotEmpty() ? '#work' : '#about' }}">{{ $sections['projects']->isNotEmpty() ? 'Discover my work' : 'Get to know me' }}<x-studio-icon name="arrow-up-right"/></a></div><div class="forma-portrait"><div class="portrait-frame">@if($profile?->image)<img src="{{ asset($profile->image) }}" alt="Portrait of {{ $name }}" width="600" height="740">@else<span class="portrait-initial">{{ mb_substr($name, 0, 1) }}</span>@endif</div><span class="portrait-caption">A thoughtful approach. A personal touch.</span><span class="forma-orbit" aria-hidden="true"></span></div></section>
+@include('templates.partials.work')
+@include('templates.partials.about')
+@include('templates.partials.journey')
+@include('templates.partials.services')

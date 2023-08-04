@@ -1,0 +1,3 @@
+@if($sections['services']->isNotEmpty())
+<section class="portfolio-section services-section" id="services"><div class="portfolio-section-heading"><div><p class="section-kicker">WHAT I BRING TO THE TABLE</p><h2>Good things,<br><span>made together.</span></h2></div></div><div class="service-grid">@foreach($sections['services'] as $service)<article class="service-card"><span class="service-number">{{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}</span><x-studio-icon name="arrow-up-right"/><h3>{{ $service->title }}</h3><p>{{ $service->description }}</p></article>@endforeach</div></section>
+@endif

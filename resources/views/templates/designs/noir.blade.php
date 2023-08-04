@@ -1,0 +1,5 @@
+<section class="portfolio-hero noir-hero" id="home"><div class="noir-topline"><span>{{ $profile?->city ?: 'INDEPENDENT THINKING' }}</span><span>PORTFOLIO / {{ date('Y') }}</span></div><div class="noir-hero-grid"><div class="hero-copy"><p class="section-kicker">CREATIVE BY NATURE.</p><h1>{{ $name }}<span class="hero-period">.</span></h1><p class="hero-role">{{ $role }}</p><a class="portfolio-button" href="{{ $sections['projects']->isNotEmpty() ? '#work' : '#about' }}">Explore the portfolio<x-studio-icon name="arrow-up-right"/></a></div><div class="noir-art"><div class="noir-rings" aria-hidden="true"><i></i><i></i><i></i></div>@if($profile?->image)<img src="{{ asset($profile->image) }}" alt="Portrait of {{ $name }}" width="400" height="500">@else<span class="noir-initial">{{ mb_substr($name, 0, 1) }}</span>@endif<span class="noir-caption">A DIFFERENT PERSPECTIVE.</span></div></div></section>
+@include('templates.partials.work')
+@include('templates.partials.services')
+@include('templates.partials.about')
+@include('templates.partials.journey')

@@ -1,0 +1,5 @@
+<section class="portfolio-hero studio-hero" id="home"><div class="studio-hero-main"><p class="section-kicker">A LITTLE INTRODUCTION</p><h1>Hello, I'm<br>{{ $name }}<span class="hero-period">.</span></h1><p class="hero-role">{{ $role }}</p><a class="portfolio-button" href="{{ $sections['projects']->isNotEmpty() ? '#work' : '#about' }}">Take a look around <x-studio-icon name="arrow-up-right"/></a><span class="studio-hero-star" aria-hidden="true"><x-studio-icon name="spark"/></span></div><div class="studio-hero-side"><div class="studio-photo">@if($profile?->image)<img src="{{ asset($profile->image) }}" alt="Portrait of {{ $name }}" width="600" height="600">@else<span class="portrait-initial">{{ mb_substr($name, 0, 1) }}</span>@endif</div><div class="studio-location"><x-studio-icon name="globe"/><span>{{ $profile?->city ?: 'A fresh perspective.' }}</span><span aria-hidden="true">↗</span></div></div></section>
+@include('templates.partials.about')
+@include('templates.partials.work')
+@include('templates.partials.services')
+@include('templates.partials.journey')
